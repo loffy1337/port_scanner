@@ -26,14 +26,14 @@ def validate_ip(addresses: list) -> list:
 
 
 def validate_port(port: int) -> list:
-    if port > 15000 or port < 1:
-        return [i for i in range(1, 15000)]
+    if port > 65535 or port < 1:
+        return [i for i in range(1, 65535)]
     return [i for i in range(1, port+1)]
 
 
 def scan_ports(ip: str, ports: list) -> None:
-    connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     for port in ports:
+        connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
             con = connection.connect_ex((ip, port,))
             if con:
