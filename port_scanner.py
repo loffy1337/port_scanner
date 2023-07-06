@@ -48,7 +48,9 @@ def scan_ports(ip: str, ports: list) -> None:
 def scan_ip(ip: str, ports: list) -> None:
     ports = func_chunks_num(ports)
     for port in ports:
-        Thread(target=scan_ports, args=(ip, port)).start()
+        th = Thread(target=scan_ports, args=(ip, port))
+        th.start()
+        th.join()
 
 
 def main() -> None:
@@ -58,7 +60,7 @@ def main() -> None:
     except TypeError:
         print('Введенные данные некорректны')
     for ip in ip_addresses:
-        Thread(target=scan_ip, args=(str(ip), port)).start()
+        scan_ip(str(ip), port)
 
 
 if __name__ == '__main__':
