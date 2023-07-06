@@ -32,8 +32,8 @@ def validate_port(port: int) -> list:
 
 
 def scan_ports(ip: str, ports: list) -> None:
-    connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     for port in ports:
+        connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
             con = connection.connect_ex((ip, port,))
             if con:
@@ -48,7 +48,9 @@ def scan_ports(ip: str, ports: list) -> None:
 def scan_ip(ip: str, ports: list) -> None:
     ports = func_chunks_num(ports)
     for port in ports:
-        Thread(target=scan_ports, args=(ip, port)).start()
+        th = Thread(target=scan_ports, args=(ip, port))
+        th.start()
+        th.join()
 
 
 def main() -> None:
