@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Сканер+портов+на+Python)]
+![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Сканер+портов+на+Python)
 ## Функции, которые выполняет скрипт:
 1. Валидация введенных IP-адресов.
 2. Валидация введенного диапозона портов.
