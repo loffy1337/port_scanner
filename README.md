@@ -1,4 +1,4 @@
-# Сканер портов на Python
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Port+scanner+on+Python)](https://git.io/typing-svg)
 
 ## Функции, которые выполняет скрипт:
 1. Валидация введенных IP-адресов.
